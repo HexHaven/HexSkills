@@ -8,8 +8,8 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [niri, wayland, compositor, kdl, org-babel, window-rules, hud, visual-debugging]
-    category: nyx-development
-    related_skills: [nyx-build]
+    category: hex-development
+    related_skills: [hex-build]
 ---
 
 # Niri Configuration

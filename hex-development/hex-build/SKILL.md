@@ -1,5 +1,5 @@
 ---
-name: nyx-build
+name: hex-build
 description: Close bounded tasks through plan, build, and proof.
 version: 0.2.0
 author: Nyxion, Hermes Agent
@@ -8,23 +8,23 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [nyx, development, implementation, gitops, deployment, verification]
-    category: nyx-development
+    category: hex-development
     related_skills: []
 ---
 
 # Nyx Build
 
-Implement an already-specified milestone through a closed, evidence-backed loop. `nyx-seed` owns intent/specification and writes `.nyx/HANDOFF.md`; this skill owns execution, including an optional authorization-gated Git publication and an optional authorization-gated remote deployment.
+Implement an already-specified milestone through a closed, evidence-backed loop. `hex-seed` owns intent/specification and writes `.nyx/HANDOFF.md`; this skill owns execution, including an optional authorization-gated Git publication and an optional authorization-gated remote deployment.
 
 **GitOps invariant:** production deploys a reviewed Git revision, never an untracked or uncommitted local working tree. A repository may define another deployment model, but do not use arbitrary `scp`/`rsync` working-tree transfer as the normal path unless that model is explicitly evidenced.
 
 ## When to Use
 
-- A bounded task has observable acceptance criteria from an operator, project documentation, or `nyx-seed` handoff.
+- A bounded task has observable acceptance criteria from an operator, project documentation, or `hex-seed` handoff.
 - A reviewed repository change needs local implementation and qualification.
 - An approved remote target may require an exact Git revision deployed and verified.
 
-Don't use for: vague project discovery, unbounded architecture exploration, creating Hermes skills, or a task with unresolved high-impact intent. `nyx-seed` remains the owner of project intent and handoff creation.
+Don't use for: vague project discovery, unbounded architecture exploration, creating Hermes skills, or a task with unresolved high-impact intent. `hex-seed` remains the owner of project intent and handoff creation.
 
 ## Lifecycle
 
@@ -87,7 +87,7 @@ Remote qualification requires `DEPLOYED_SHA == LOCAL_COMMIT` plus repository/ser
 
 ## Handoff Contract
 
-When `.nyx/HANDOFF.md` is in scope, validate it against fresh repository evidence before PLAN. A deployment-capable build may append this section without altering `nyx-seed`'s original handoff ownership:
+When `.nyx/HANDOFF.md` is in scope, validate it against fresh repository evidence before PLAN. A deployment-capable build may append this section without altering `hex-seed`'s original handoff ownership:
 
 ```markdown
 ## Deployment
@@ -121,7 +121,7 @@ All unresolved values remain `UNKNOWN`. A task is not deployment-ready while req
 - `references/qualify.md` — local/remote evidence statuses and qualification.
 - `references/gitops.md` — publication, git-checkout deployment, SHA proof, and rollback discipline.
 - `references/unify.md` — closure report separating implementation, publication, and deployment.
-- `references/handoff.md` — `nyx-build` supplement to `nyx-seed`'s canonical handoff contract.
+- `references/handoff.md` — `hex-build` supplement to `hex-seed`'s canonical handoff contract.
 
 ## Pitfalls
 
@@ -131,7 +131,7 @@ All unresolved values remain `UNKNOWN`. A task is not deployment-ready while req
 - Resetting, cleaning, stashing, or overwriting an unexpected dirty production checkout.
 - Inventing build, service, health, or rollback commands when deployment evidence is incomplete.
 - Treating a process as healthy without the defined endpoint or user-visible path check.
-- Rewriting `nyx-seed` handoff intent instead of appending build/deployment state.
+- Rewriting `hex-seed` handoff intent instead of appending build/deployment state.
 
 ## Verification
 

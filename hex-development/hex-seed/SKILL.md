@@ -1,5 +1,5 @@
 ---
-name: nyx-seed
+name: hex-seed
 description: Shape vague projects into implementation-ready specs.
 version: 0.1.0
 author: Nyxion, Hermes Agent
@@ -8,7 +8,7 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [nyx, development, discovery, project-specification, readiness]
-    category: nyx-development
+    category: hex-development
     related_skills: []
 ---
 
@@ -29,7 +29,7 @@ Don't use for: tiny edits, debugging, executing an existing specification, or cr
 
 `IDEA → DISCOVER → SHAPE → SPECIFY → READINESS CHECK → HANDOFF`
 
-HANDOFF's normal output is a repository-local `.nyx/HANDOFF.md` (see `references/handoff.md`), so a fresh Hermes session can run `nyx-build` without the operator re-pasting this conversation. `nyx-recap` remains a separate, optional recovery/manual-handoff tool and is never required between `nyx-seed` and `nyx-build`.
+HANDOFF's normal output is a repository-local `.nyx/HANDOFF.md` (see `references/handoff.md`), so a fresh Hermes session can run `hex-build` without the operator re-pasting this conversation. `hex-recap` remains a separate, optional recovery/manual-handoff tool and is never required between `hex-seed` and `hex-build`.
 
 ### 1. IDEA — capture intent
 
@@ -68,7 +68,7 @@ If `READY` (or a materially complete `SPECIFIED`/`PLANNED` state the operator wa
 1. Re-inspect current repo evidence (branch, HEAD, working-tree state) immediately before writing — do not reuse stale evidence from earlier in the conversation.
 2. Check for an existing `.nyx/HANDOFF.md`. If its `status` is `ACTIVE`, `PLANNED`, or `IN_PROGRESS`, **STOP**: report the existing topic/status/age and ask whether to archive it before proceeding. Never overwrite silently.
 3. If it is absent or already closed (`PASS`/`FAIL`/`BLOCKED`/`CANCELLED`/`SUPERSEDED`), archive any existing file to `.nyx/history/<ISO-8601-timestamp>-<slug-topic>.md` first, then write the new handoff to `.nyx/HANDOFF.md` using `templates/HANDOFF.md`, with `status: ACTIVE`.
-4. Report the exact file path written, whether it is new/tracked/untracked/modified (from `git status --short`), and give the operator exactly one next instruction: start a fresh Hermes session in this repository and run `/nyx-build`. Do not instruct the operator to copy-paste the full seed output.
+4. Report the exact file path written, whether it is new/tracked/untracked/modified (from `git status --short`), and give the operator exactly one next instruction: start a fresh Hermes session in this repository and run `/hex-build`. Do not instruct the operator to copy-paste the full seed output.
 
 **No repository (fallback path).** When no repository/project root is identifiable, present the handoff contract in chat only and state plainly that no repository-local handoff could be written.
 
@@ -110,4 +110,4 @@ Recommend execution as a separate, explicitly authorized action in either case. 
 - [ ] Exactly one readiness state is reported with evidence.
 - [ ] No project implementation occurred.
 - [ ] When a repository/project root exists, `.nyx/HANDOFF.md` was written (after any required archiving/conflict check) and its exact path reported; otherwise the handoff was presented in chat only with that fact stated explicitly.
-- [ ] The operator's next instruction is exactly "start a fresh session and run `/nyx-build`" — not a request to paste the full seed output.
+- [ ] The operator's next instruction is exactly "start a fresh session and run `/hex-build`" — not a request to paste the full seed output.

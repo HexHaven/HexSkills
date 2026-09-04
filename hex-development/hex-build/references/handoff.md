@@ -1,6 +1,6 @@
-# Handoff Validation (nyx-build side)
+# Handoff Validation (hex-build side)
 
-The authoritative `.nyx/HANDOFF.md` schema, lifecycle, archiving convention, and tracking policy remain in `nyx-seed`'s `references/handoff.md` (`skill_view(name="nyx-seed", file_path="references/handoff.md")`). `nyx-seed` owns task intent/specification and creates the handoff; this supplement defines only `nyx-build` validation and optional execution/deployment additions.
+The authoritative `.nyx/HANDOFF.md` schema, lifecycle, archiving convention, and tracking policy remain in `hex-seed`'s `references/handoff.md` (`skill_view(name="hex-seed", file_path="references/handoff.md")`). `hex-seed` owns task intent/specification and creates the handoff; this supplement defines only `hex-build` validation and optional execution/deployment additions.
 
 ## Locate and validate
 

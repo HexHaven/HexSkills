@@ -1,7 +1,7 @@
 ---
 version: 1
 status: ACTIVE
-source: nyx-seed
+source: hex-seed
 created_at: <ISO-8601>
 project_root: <absolute-or-repo-identified-path>
 branch: <branch-or-NONE>

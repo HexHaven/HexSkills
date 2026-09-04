@@ -1,5 +1,5 @@
 ---
-name: nyx-skillsmith
+name: hex-skillsmith
 description: Create and audit Hermes-native skills safely.
 version: 0.1.0
 author: Nyxion, Hermes Agent
@@ -8,7 +8,7 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [nyx, hermes, skills, authoring, audit, distillation]
-    category: nyx-development
+    category: hex-development
     related_skills: []
 ---
 

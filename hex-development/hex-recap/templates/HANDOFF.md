@@ -7,9 +7,9 @@
 - working-tree state: <clean / dirty + `git status --short` summary>
 
 ## Active workflow
-- active nyx-seed / nyx-build topic: <name or "none">
-- current phase: <IDEA|DISCOVER|SHAPE|SPECIFY|READINESS|HANDOFF for nyx-seed, or PLAN|APPLY|QUALIFY|UNIFY for nyx-build>
-- readiness/closure state: <nyx-seed readiness state, or nyx-build PASS/FAIL/BLOCKED/CANCELLED/open>
+- active hex-seed / hex-build topic: <name or "none">
+- current phase: <IDEA|DISCOVER|SHAPE|SPECIFY|READINESS|HANDOFF for hex-seed, or PLAN|APPLY|QUALIFY|UNIFY for hex-build>
+- readiness/closure state: <hex-seed readiness state, or hex-build PASS/FAIL/BLOCKED/CANCELLED/open>
 
 ## Established facts
 Only evidence-backed or explicit USER-STATED facts, each labeled.

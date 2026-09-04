@@ -26,7 +26,7 @@ HexSkills/
 
 | Category | Description |
 | --- | --- |
-| [`nyx-development`](./nyx-development/) | Skills for the NyxOS / Nyx homelab engineering workflow (build/plan/recap loop, skill authoring, infra docs reconciliation, Niri config, Voidweaver Traefik routes). |
+| [`hex-development`](./hex-development/) | General-purpose Hermes agent workflow skills: project idea → spec → implementation loop (`hex-seed`/`hex-build`), session recap (`hex-recap`), skill authoring (`hex-skillsmith`), and Niri compositor configuration. |
 
 New categories are added organically as skills are authored — no placeholder categories are pre-created.
 
@@ -39,13 +39,13 @@ Point a Hermes profile at this repo so its skills load alongside the profile's l
 ```yaml
 skills:
   external_dirs:
-    - /home/nyxion/Forge/Repositories/HexHaven/HexSkills
+    - /path/to/HexSkills   # wherever you cloned this repo
 ```
 
 Or via CLI:
 
 ```bash
-hermes -p <profile> config set skills.external_dirs '["/home/nyxion/Forge/Repositories/HexHaven/HexSkills"]'
+hermes -p <profile> config set skills.external_dirs '["/path/to/HexSkills"]'
 ```
 
 Skills under an external dir are fully integrated: they appear in the skill index, `skills_list`, `skill_view`, and as `/skill-name` slash commands. If a same-named skill exists both locally and here, the local one wins.
@@ -59,7 +59,7 @@ Once pushed to `github.com/HexHaven/HexSkills`, this repo is installable as a di
 ```bash
 hermes skills tap add HexHaven/HexSkills
 hermes skills browse --source github        # or hermes skills search <query>
-hermes skills install HexHaven/HexSkills/nyx-development/nyx-build
+hermes skills install HexHaven/HexSkills/hex-development/hex-build
 ```
 
 The `skills.sh.json` file at the repo root defines category groupings (`groupings`) so installs show real category labels instead of tag-derived guesses, both in the Hermes dashboard's Browse-hub view and on skills.sh-compatible tooling.
