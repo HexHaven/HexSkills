@@ -1,0 +1,17 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "Nyx Development",
+      "skills": [
+        "infrastructure-documentation-reconciliation",
+        "niri-configuration",
+        "nyx-build",
+        "nyx-recap",
+        "nyx-seed",
+        "nyx-skillsmith",
+        "voidweaver-traefik-route-creator"
+      ]
+    }
+  ]
+}
