@@ -1,0 +1,7 @@
+http:
+  routers:
+    <service>:
+      rule: "Host(`<domain>`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+      entryPoints:
+        - downstream
+      service: api@internal
