@@ -10,6 +10,12 @@ Hermes-native, general-purpose procedures for moving from project idea to verifi
 | `hex-build` | Authorized bounded implementation and loop closure | `PLAN → APPLY → QUALIFY → UNIFY` |
 | `hex-recap` | Compact, evidence-backed session recap/handoff | read-only report of `hex-seed`/`hex-build` state |
 | `hex-skillsmith` | Hermes skill discovery, scaffold, distillation, audit | `DISCOVER → SPECIFY → SCAFFOLD → DISTILL → AUDIT → VERIFY` |
+| `hex-soulforge` | Forging and refining compact agent Souls | soul draft → distill → validate |
+| `hex-kanban` | Bridging `hex-seed` and `hex-build` across a Kanban board | card intake → route → close loop |
+| `hexhaven-gitops` | Aurelius, the trigger-driven autonomous HexHaven Git executor | `inspect → understand intent → change → validate → self-review → sign commit → push → verify → report` |
+| `aurelius-repo-identity` | Binding one named HexHaven repo to Aurelius' signing identity | verify repo → set identity → confirm signature |
+| `delegated-execution-discipline` | Handing part of a task to a sub-agent or harness | scope → delegate → verify the claim |
+| `multi-agent-coordination` | Routing work across specialist agents, escalating decisions | classify → route → escalate |
 | `niri-configuration` | Changing Niri compositor config, tracing source to runtime | config edit → validate → reload → verify |
 
 Project flow:

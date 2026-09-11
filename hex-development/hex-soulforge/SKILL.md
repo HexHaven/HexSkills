@@ -1,73 +1,72 @@
 ---
 name: hex-soulforge
-description: Design, audit, and refine Hermes persona SOUL.md files.
-version: 0.1.0
+description: Forge and refine compact agent Souls.
+version: 0.3.0
 author: Nyxion, Hermes Agent
 license: MIT
-platforms: [linux]
+platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [persona, soul, identity, authoring, audit]
+    tags: [soul, identity, character, naming, audit]
     category: hex-development
     related_skills: [hex-skillsmith]
 ---
 
 # Hex Soulforge
 
-Design, audit, refine, and validate Hermes persona identity contracts (`SOUL.md`). Owns persona structure, tone, authority boundaries, and anti-drift rules for a role brief. It does not own domain/specialist truth, infrastructure state, deployment, or platform/gateway configuration.
+Forge and refine compact Souls that describe who an agent is. **Identity rather than capabilities.**
 
 ## When to Use
 
-- A new Hermes profile needs a SOUL.md generated from a role brief.
-- An existing persona/SOUL needs audit for drift, contradiction, or authority creep.
-- A persona needs targeted refinement (tone, proactivity, boundaries) without a full rewrite.
-- Naming candidates are needed for a new persona.
+- Create or refine an agent's identity, character, values, intellectual temperament, user relationship, professional stance, or meaningful boundaries.
+- Choose a fitting name or audit a Soul for identity drift and misplaced content.
+- Decide whether a proposed specialist represents a different identity or just different skills/context.
 
-Don't use for: infrastructure/platform config for a profile (routing, model assignment, tool grants — that is runtime configuration, not identity), repository `AGENTS.md` files, or general project specs.
+Don't use for: implementing skills, project instructions, memory management, runtime configuration, or profile deployment.
 
-## Prerequisites
+## The Boundary
 
-- An operator-authorized role brief (who the persona is for, what it must never do, its relationship to the user and to other profiles). Do not invent authority the brief does not grant.
-- Awareness of existing profile names and identities (`hermes -p <profile> config show` or `ls ~/.hermes/profiles/`) to avoid collisions.
+`Agent = Soul + Skills + Context + Memory + Runtime`
 
-## Procedure
+SOUL is who the agent is; Skills are reusable expertise and working methods; Context is what applies to the current project/task; Memory is what should persist across sessions; Runtime is tools, permissions, models, and environment. These are distinctions, not new infrastructure to build.
 
-1. **Extract the persona contract** — from the role brief, pull role summary, duties, exclusions, authority (may/may-not), tone, proactivity level, relationship model, and uncertainty behavior. Load `references/persona-model.md` for the dimension set. Done when every dimension is filled or explicitly marked N/A.
-2. **Check collisions** — compare the proposed name and role against existing Hermes profiles and the platform/backend name itself (e.g. never name a persona "Hermes" on the Hermes platform). Done when no unresolved name or authority collision remains.
-3. **Draft the SOUL** — use `templates/SOUL.md` as the section skeleton; fill only behaviorally meaningful sections (see `## Section Policy` in the template). Keep mutable infrastructure/project facts out of the SOUL. Done when a complete draft exists.
-4. **Audit the draft** — run every check in `references/validation-checklist.md` against the draft. Done when each check has an observed PASS/FAIL, not an assumption.
-5. **Write the canonical file** — confirm the exact persona name with the operator, then write the audited SOUL.md to `/home/nyxion/Forge/Resources/agents/Personas/<personaname>/SOUL.md`. If a file already exists there, back it up (e.g. `SOUL.md.bak-<timestamp>`) before overwriting, and confirm the overwrite with the operator first. Done when the canonical file is written and read back to confirm content matches the audited draft.
-6. **Report** — summarize role brief source, name/collision checks, authority model, drift risks, canonical file path written, and what validation was and was not performed.
+For each passage ask: **Would this still describe the agent if its project, tools, skills, model, and runtime changed tomorrow?** If yes, it may belong in SOUL. If no, recommend a destination without managing it:
 
-Mirroring the SOUL.md to a live profile (`~/.hermes/profiles/<profile-name>/SOUL.md`), checksum verification, and oneshot activation validation are a separate, later step owned outside this skill. Do not perform that mirror/activation step here — hand off the canonical artifact instead.
+- **SKILL** — reusable expertise, procedures, and working methods.
+- **PROJECT CONTEXT** — current goals, project facts, and task-specific rules.
+- **MEMORY** — learned facts worth retaining across sessions, not defining identity.
+- **RUNTIME** — tools, permissions, models, environment, and deployment settings.
+- **DROP** — repetition, empty virtues, obsolete material, or filler.
 
-## Safety Boundaries
+## Working Method
 
-- Never grant a persona deploy/publish/push/approval authority the role brief did not explicitly state.
-- Never collapse platform/backend identity (e.g. Hermes) into persona identity.
-- Keep the user (or the declared final operator) as final approval authority unless the brief explicitly delegates that.
-- No secrets, credentials, or live personal data in SOUL files.
-- Read-only discovery (existing profiles, existing SOUL) precedes any overwrite; back up before overwriting an existing SOUL.
+1. Read the brief and complete existing Soul using `read_file`; use `search_files` to locate its canonical source if needed. Identify what makes this mind distinctive. Ask only about gaps that materially change the identity.
+2. Draft or refine in natural-language Markdown. Use `templates/SOUL.md` when a scaffold helps; omit unhelpful sections and remove placeholders. Add Agency only when initiative materially defines personality. Prefer a few consequential principles over a capability list or a line quota.
+3. Audit against the checks below. Preserve distinctive judgment rather than replacing it with generic helpfulness. For naming, explain the fit and check available names for collisions when relevant; do not rename a profile.
+4. Deliver the requested Soul or concise audit findings. For misplaced content, identify the passage and recommended destination. Write only an authorized canonical target; a draft is not profile activation. Do not require a long report for a small edit.
 
-## References
+## Specialists
 
-- `references/persona-model.md` — the 8 persona dimensions, naming rules, and anti-patterns to check against.
-- `references/validation-checklist.md` — required and recommended audit checks.
-- `templates/SOUL.md` — section skeleton for a new SOUL.md.
+`Specialist = professional identity + suitable skills + relevant context`
+
+- Same identity + different capability → same profile + another skill.
+- Same identity + different project → same profile + different context.
+- Genuinely different identity → consider another profile.
+
+Compare actual identities, not titles or shared tools. Preserve meaningful differences in perspective and user relationship; never infer permission to collapse runtime isolation. If recommending specific skills, inspect them with `skills_list` / `skill_view`. Keep recommendations outside the Soul. No specialist contracts, ownership matrices, automatic skill creation, or profile merging.
 
 ## Pitfalls
 
-- Persona-as-costume: strong voice, no operational rules (authority, escalation, exclusions left vague).
-- Authority creep: proactivity language quietly implying autonomous execution rights.
-- SOUL bloat: mutable project facts, infrastructure topology, or long runbooks stored in the persona file instead of profile config/skills.
-- Writing the mirrored `~/.hermes/profiles/<name>/SOUL.md` copy yourself instead of leaving that mirror/activation step to the separate later workflow that owns it.
-- Overwriting an existing canonical SOUL.md at `/home/nyxion/Forge/Resources/agents/Personas/<personaname>/SOUL.md` without a backup or without operator confirmation.
-- Treating a successful canonical write as proof of activation; mirroring and oneshot validation are a separate, later step owned elsewhere.
+- A decorative name and generic virtues do not describe a recognizable mind. Express preferences that affect judgment, including how it handles uncertainty, disagreement, complexity, and failure.
+- A durable instinct may belong in SOUL; the step-by-step method for applying it belongs in a skill. Do not paste this authoring workflow into the Soul.
+- Identity grants neither capability nor authority. Keep only identity-defining boundaries, not duplicated platform safeguards or prose permission systems.
 
 ## Verification
 
-- [ ] Every persona dimension in `references/persona-model.md` was filled or explicitly marked N/A.
-- [ ] Name/role checked against existing profiles and the platform name; no unresolved collision.
-- [ ] Every check in `references/validation-checklist.md` has an observed result.
-- [ ] Canonical SOUL.md written to `/home/nyxion/Forge/Resources/agents/Personas/<personaname>/SOUL.md` and read back to confirm it matches the audited draft; any pre-existing file was backed up first.
-- [ ] No mirror write to `~/.hermes/profiles/<profile-name>/SOUL.md` and no activation/oneshot validation was performed here; that step was left to the separate downstream workflow.
+- Is the identity recognizable, even with its name removed?
+- Does it describe a mind rather than a capability list?
+- Is project/tool/runtime material leaking into the Soul? Have misplaced procedures and memory facts also been identified?
+- Is it compact enough to remain readable, with no filler or forced sections?
+- Does it avoid generic-assistant drift while retaining its defining character and boundaries?
+
+Fix defects or report them briefly. A textual review is not proof of live behavior; report any unperformed behavioral test as NOT RUN. Soulforge recommends moves to other layers but does not implement them.

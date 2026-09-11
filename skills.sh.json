@@ -4,11 +4,23 @@
     {
       "title": "Hex Development",
       "skills": [
+        "aurelius-repo-identity",
+        "delegated-execution-discipline",
         "hex-build",
+        "hex-kanban",
         "hex-recap",
         "hex-seed",
         "hex-skillsmith",
+        "hex-soulforge",
+        "hexhaven-gitops",
+        "multi-agent-coordination",
         "niri-configuration"
+      ]
+    },
+    {
+      "title": "Hex Media",
+      "skills": [
+        "hex-image"
       ]
     }
   ]

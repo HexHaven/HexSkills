@@ -27,6 +27,7 @@ HexSkills/
 | Category | Description |
 | --- | --- |
 | [`hex-development`](./hex-development/) | General-purpose Hermes agent workflow skills: project idea → spec → implementation loop (`hex-seed`/`hex-build`), session recap (`hex-recap`), skill authoring (`hex-skillsmith`), and Niri compositor configuration. |
+| [`hex-media`](./hex-media/) | Local media generation: text-to-image via the on-box Bonsai Image model (`hex-image`). |
 
 New categories are added organically as skills are authored — no placeholder categories are pre-created.
 
