@@ -10,8 +10,7 @@ Hermes-native, general-purpose procedures for moving from project idea to verifi
 | `hex-build` | Authorized bounded implementation and loop closure | `PLAN → APPLY → QUALIFY → UNIFY` |
 | `hex-recap` | Compact, evidence-backed session recap/handoff | read-only report of `hex-seed`/`hex-build` state |
 | `hex-skillsmith` | Hermes skill discovery, scaffold, distillation, audit | `DISCOVER → SPECIFY → SCAFFOLD → DISTILL → AUDIT → VERIFY` |
-| `hex-soulforge` | Forging and refining compact agent Souls | soul draft → distill → validate |
-| `hex-kanban` | Bridging `hex-seed` and `hex-build` across a Kanban board | card intake → route → close loop |
+| `hex-soulforge` | Forging and refining compact agent Souls in the `SOUL.md` shape | soul draft → distill → validate |
 | `hexhaven-gitops` | Aurelius, the trigger-driven autonomous HexHaven Git executor | `inspect → understand intent → change → validate → self-review → sign commit → push → verify → report` |
 | `aurelius-repo-identity` | Binding one named HexHaven repo to Aurelius' signing identity | verify repo → set identity → confirm signature |
 | `delegated-execution-discipline` | Handing part of a task to a sub-agent or harness | scope → delegate → verify the claim |
@@ -33,6 +32,7 @@ Concepts were reviewed from:
 - [ChristopherKahler/seed](https://github.com/ChristopherKahler/seed)
 - [ChristopherKahler/paul](https://github.com/ChristopherKahler/paul)
 - [ChristopherKahler/skillsmith](https://github.com/ChristopherKahler/skillsmith)
+- [soul.md](https://soul.md/) and [Stefz29/SOUL-Hermes](https://github.com/Stefz29/SOUL-Hermes#suggested-soulmd-shape) — the `SOUL.md` idea and section shape that `hex-soulforge` follows
 
 The Nyx files are independently rewritten for Hermes. No source files, substantial source wording, installers, branded footers, Claude-specific metadata, or runtime command conventions were copied. PAUL includes an MIT license file. The inspected SEED and Skillsmith commits declare MIT in package metadata, but no `LICENSE` file was present.
 

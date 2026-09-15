@@ -1,7 +1,7 @@
 ---
 name: hex-recap
 description: Produce a compact recap or handoff of Nyx workflow state.
-version: 0.1.0
+version: 0.2.0
 author: Nyxion, Hermes Agent
 license: MIT
 platforms: [linux]
@@ -47,7 +47,7 @@ Infer the mode from phrasing; if ambiguous, produce **RECAP** (the lighter artif
 
 3. **Reconcile evidence against conversational claims** — repository state always overrides a stale claim from earlier in the conversation (e.g. a file the conversation says was created but `git status` shows untracked/missing, or a branch that has since changed). Flag contradictions explicitly rather than silently picking one side. Done when every fact used in the output has a label: `USER-STATED`, `OBSERVED`, `ASSUMED`, `PROPOSED`, `UNKNOWN`, or `CONTRADICTORY`.
 
-4. **Assemble machine-readable fields** for any implemented or verified work, reusing the Hermes Kanban handoff convention (no Kanban dependency required):
+4. **Assemble machine-readable fields** for any implemented or verified work:
    ```
    changed_files: [...]
    verification: [...]      # commands actually run + PASS/FAIL/BLOCKED/NOT RUN, never invented

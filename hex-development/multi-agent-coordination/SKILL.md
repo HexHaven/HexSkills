@@ -9,7 +9,7 @@ metadata:
   hermes:
     tags: [coordination, routing, escalation, dependencies, blockers, synthesis]
     category: hex-development
-    related_skills: [delegated-execution-discipline, hex-recap, hex-kanban]
+    related_skills: [delegated-execution-discipline, hex-recap]
 ---
 
 # Multi-Agent Coordination
@@ -29,8 +29,8 @@ second copy of the tracking system.
 - Deciding whether something is yours to settle, a specialist's, or the principal's.
 
 Don't use for: handing a bounded slice of your *own* task to a sub-agent or harness
-(`delegated-execution-discipline`); recapping session/workflow state (`hex-recap`); seed→build
-board mechanics (`hex-kanban`); reviewing a submitted deliverable (`sdlc-review`).
+(`delegated-execution-discipline`); recapping session/workflow state (`hex-recap`);
+reviewing a submitted deliverable (`sdlc-review`).
 
 ## Procedure
 
