@@ -1,7 +1,7 @@
 ---
 version: 1
 status: ACTIVE
-source: hex-seed
+source: hex-forge
 created_at: <ISO-8601>
 project_root: <absolute-or-repo-identified-path>
 branch: <branch-or-NONE>

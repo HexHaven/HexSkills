@@ -7,9 +7,10 @@
 - working-tree state: <clean / dirty + `git status --short` summary>
 
 ## Active workflow
-- active hex-seed / hex-build topic: <name or "none">
-- current phase: <IDEA|DISCOVER|SHAPE|SPECIFY|READINESS|HANDOFF for hex-seed, or PLAN|APPLY|QUALIFY|UNIFY for hex-build>
-- readiness/closure state: <hex-seed readiness state, or hex-build PASS/FAIL/BLOCKED/CANCELLED/open>
+- active hex-forge topic: <name or "none">
+- current phase: <IDEA|DISCOVER|SHAPE|SPECIFY|READINESS for the discovery half, or
+  PLAN|APPLY|QUALIFY|PUBLISH|DEPLOY|UNIFY for the build half>
+- readiness/closure state: <readiness state, or PASS|FAIL|BLOCKED|CANCELLED|open>
 
 ## Established facts
 Only evidence-backed or explicit USER-STATED facts, each labeled.

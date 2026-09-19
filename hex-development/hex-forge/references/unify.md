@@ -43,4 +43,4 @@ Code-only or publication-only scope can pass without deployment. A deployment-re
 
 ## State and exit
 
-Use repository-native artifacts first. If `.nyx/HANDOFF.md` is in scope, append `## Build Result`; never alter seed-owned original task intent. Preserve `UNKNOWN` deployment facts and rollback state. Do not automatically commit, push, deploy, restart, close issues, or notify as part of UNIFY.
+Use repository-native artifacts first. If `.nyx/HANDOFF.md` is in scope, append `## Build Result`; never alter the handoff's original Goal/Scope/Non-Goals/Acceptance Criteria. Preserve `UNKNOWN` deployment facts and rollback state. Do not automatically commit, push, deploy, restart, close issues, or notify as part of UNIFY.

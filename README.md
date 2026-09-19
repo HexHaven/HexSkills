@@ -26,7 +26,7 @@ HexSkills/
 
 | Category | Description |
 | --- | --- |
-| [`hex-development`](./hex-development/) | General-purpose Hermes agent workflow skills: project idea → spec → implementation loop (`hex-seed`/`hex-build`), session recap (`hex-recap`), skill authoring (`hex-skillsmith`), agent Soul authoring (`hex-soulforge`), and Niri compositor configuration. |
+| [`hex-development`](./hex-development/) | General-purpose Hermes agent workflow skills: idea-to-deploy project lifecycle with recap mode (`hex-forge`), skill authoring (`hex-skillsmith`), and agent Soul authoring (`hex-soulforge`). |
 
 New categories are added organically as skills are authored — no placeholder categories are pre-created.
 
@@ -59,7 +59,7 @@ Once pushed to `github.com/HexHaven/HexSkills`, this repo is installable as a di
 ```bash
 hermes skills tap add HexHaven/HexSkills
 hermes skills browse --source github        # or hermes skills search <query>
-hermes skills install HexHaven/HexSkills/hex-development/hex-build
+hermes skills install HexHaven/HexSkills/hex-development/hex-forge
 ```
 
 The `skills.sh.json` file at the repo root defines category groupings (`groupings`) so installs show real category labels instead of tag-derived guesses, both in the Hermes dashboard's Browse-hub view and on skills.sh-compatible tooling.

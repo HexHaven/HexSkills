@@ -6,14 +6,11 @@
       "skills": [
         "aurelius-repo-identity",
         "delegated-execution-discipline",
-        "hex-build",
-        "hex-recap",
-        "hex-seed",
+        "hex-forge",
         "hex-skillsmith",
         "hex-soulforge",
         "hexhaven-gitops",
-        "multi-agent-coordination",
-        "niri-configuration"
+        "multi-agent-coordination"
       ]
     }
   ]

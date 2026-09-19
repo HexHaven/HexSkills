@@ -6,21 +6,18 @@ Hermes-native, general-purpose procedures for moving from project idea to verifi
 
 | Skill | Owns | Workflow |
 |---|---|---|
-| `hex-seed` | Project discovery, concise specification, readiness | `IDEA → DISCOVER → SHAPE → SPECIFY → READINESS CHECK → HANDOFF` |
-| `hex-build` | Authorized bounded implementation and loop closure | `PLAN → APPLY → QUALIFY → UNIFY` |
-| `hex-recap` | Compact, evidence-backed session recap/handoff | read-only report of `hex-seed`/`hex-build` state |
+| `hex-forge` | Idea-to-deploy project lifecycle, gated at APPLY/PUBLISH/DEPLOY, plus read-only recap | `IDEA → DISCOVER → SHAPE → SPECIFY → READINESS → PLAN → APPLY → QUALIFY → [PUBLISH] → [DEPLOY] → UNIFY` |
 | `hex-skillsmith` | Hermes skill discovery, scaffold, distillation, audit | `DISCOVER → SPECIFY → SCAFFOLD → DISTILL → AUDIT → VERIFY` |
 | `hex-soulforge` | Forging and refining compact agent Souls in the `SOUL.md` shape | soul draft → distill → validate |
 | `hexhaven-gitops` | Aurelius, the trigger-driven autonomous HexHaven Git executor | `inspect → understand intent → change → validate → self-review → sign commit → push → verify → report` |
 | `aurelius-repo-identity` | Binding one named HexHaven repo to Aurelius' signing identity | verify repo → set identity → confirm signature |
 | `delegated-execution-discipline` | Handing part of a task to a sub-agent or harness | scope → delegate → verify the claim |
 | `multi-agent-coordination` | Routing work across specialist agents, escalating decisions | classify → route → escalate |
-| `niri-configuration` | Changing Niri compositor config, tracing source to runtime | config edit → validate → reload → verify |
 
 Project flow:
 
 ```text
-Idea → hex-seed → project specification → hex-build → closed milestone
+Idea → hex-forge → closed milestone
 ```
 
 Skill-authoring flow is separate and owned entirely by `hex-skillsmith`; there is no circular dependency.

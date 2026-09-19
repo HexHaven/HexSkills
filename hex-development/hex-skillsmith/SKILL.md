@@ -34,7 +34,7 @@ Before authoring, ask:
 
 If reuse or capability is absent, recommend **SOUL** for identity, **PROJECT CONTEXT** for current task/project instructions, **MEMORY** for learned facts worth retaining, or **RUNTIME** for tools, permissions, models, and environment. Recommend the destination; do not modify it as part of skill authoring.
 
-`Agent = Soul + Skills + Context + Memory + Runtime` needs no additional architectural layers. A skill can teach a reusable deployment method without embedding a live deployment's settings or granting deployment authority.
+This boundary (canonical formula and full breakdown: `hex-soulforge`'s "The Boundary" section) needs no additional architectural layers. A skill can teach a reusable deployment method without embedding a live deployment's settings or granting deployment authority.
 
 ## Working Method
 

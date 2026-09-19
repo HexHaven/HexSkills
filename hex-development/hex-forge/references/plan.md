@@ -9,9 +9,12 @@
 ## Repository and deployment discovery
 
 1. Locate/read applicable `AGENTS.md`, project/task docs, repository-native state, CI, manifests, service definitions, and deployment/runbook docs.
-2. In Git, run exactly:
+2. In Git, run and record actual output — using whatever terminal/shell tool the
+   current runtime exposes, never assume the result:
 
-   `terminal(command="git status --short && git branch --show-current && git log -1 --oneline && git remote -v")`
+   ```bash
+   git status --short && git branch --show-current && git log -1 --oneline && git remote -v
+   ```
 
 3. Identify unrelated modified/untracked files as protected unless explicitly in scope.
 4. Inspect maintained validation and deployment commands; do not infer them from technology names.
@@ -25,7 +28,7 @@
    | `container` | Image/manifest deployment is documented or USER-STATED. |
    | `unknown` | Evidence is absent, incomplete, or contradictory. |
 
-For `git-checkout`, record approved remote, branch, production host/path, service unit, build/install command, restart/reload command, health verification, and rollback method. Each is `OBSERVED`, `USER-STATED`, or `UNKNOWN`; never substitute plausible values.
+For `git-checkout`, record approved remote, branch, production host/path, service unit, build/install command, restart/reload command, health verification, and rollback method. Each is `OBSERVED`, `USER-STATED`, or `UNKNOWN`; never substitute plausible values. Record these under the `## Deployment` addition defined in `references/handoff.md` when `.nyx/HANDOFF.md` is in scope.
 
 ## Handoff validation
 

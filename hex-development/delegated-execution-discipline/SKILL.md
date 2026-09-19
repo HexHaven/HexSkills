@@ -9,7 +9,7 @@ metadata:
   hermes:
     tags: [delegation, sub-agents, verification, provenance, scope]
     category: hex-development
-    related_skills: [hex-build]
+    related_skills: [hex-forge]
 ---
 
 # Delegated Execution Discipline

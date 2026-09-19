@@ -2,7 +2,9 @@
 
 ## Core invariant
 
-Production must deploy a reviewed Git revision, not an untracked local working tree:
+Production must deploy a reviewed Git revision, not an untracked local working tree. A
+repository may define another deployment model, but do not use arbitrary `scp`/`rsync`
+working-tree transfer as the normal path unless that model is explicitly evidenced:
 
 ```text
 local repository → APPLY → QUALIFY → review diff → commit → push
