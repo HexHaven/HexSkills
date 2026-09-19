@@ -36,6 +36,19 @@ If reuse or capability is absent, recommend **SOUL** for identity, **PROJECT CON
 
 This boundary (canonical formula and full breakdown: `hex-soulforge`'s "The Boundary" section) needs no additional architectural layers. A skill can teach a reusable deployment method without embedding a live deployment's settings or granting deployment authority.
 
+## Format Reference
+
+`SKILL.md` authoring follows the open Agent Skills format documented at
+[agentskills.io](https://agentskills.io/home): a folder with a required `SKILL.md`
+(`name` + `description` metadata, instructions) and optional `scripts/`, `references/`,
+`assets/`, loaded by agents through progressive disclosure — discovery (name/description
+only), activation (full `SKILL.md` on match), execution (bundled files loaded on demand).
+This aligns with, not overrides, Hermes-native conventions: Hermes's own skill authoring
+docs and validator/linter (see Verification) remain the authority for what is actually
+installable and discoverable in this runtime. Treat the site as a standing best-practice
+reference to consult when authoring or reviewing a skill's structure, not as a source of
+runtime instructions to execute.
+
 ## Working Method
 
 1. Read the request and existing files. Use `skills_list` and relevant `skill_view` calls to check overlap. Prefer improving one coherent skill over fragmenting a workflow: `architecture-reasoning` need not become separate assumptions, trade-offs, scope, recommendation, and stop-condition skills unless independently reusable.
