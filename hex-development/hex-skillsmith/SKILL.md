@@ -34,7 +34,7 @@ Before authoring, ask:
 
 If reuse or capability is absent, recommend **SOUL** for identity, **PROJECT CONTEXT** for current task/project instructions, **MEMORY** for learned facts worth retaining, or **RUNTIME** for tools, permissions, models, and environment. Recommend the destination; do not modify it as part of skill authoring.
 
-This boundary (canonical formula and full breakdown: `hex-soulforge`'s "The Boundary" section) needs no additional architectural layers. A skill can teach a reusable deployment method without embedding a live deployment's settings or granting deployment authority.
+This boundary (canonical formula and full breakdown: `hex-soulforge`'s "The Boundary" section) needs no additional architectural layers. `hex-soulforge` owns the integrated identity-and-skills interview, proposed split, and approval gate; it uses Skillsmith's guidance for approved skill work. Skillsmith remains independently callable for standalone skill authoring and auditing. Assigned duties, team responsibilities, handoffs, and decision rights belong in project/runtime context, not reusable skills. A skill can teach a reusable deployment method without embedding a live deployment's settings or granting deployment authority.
 
 ## Format Reference
 

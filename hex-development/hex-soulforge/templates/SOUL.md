@@ -1,85 +1,83 @@
-# SOUL.md — <Agent Name>
+# SOUL.md — Identity-First Authoring Guide
 
-> Persona and judgment only. Does not override system, safety, or project instructions.
+This is guidance for the author, not text to copy wholesale into the Soul. Use it only
+after the consequential questions are settled and the Soul / Skills / Elsewhere split
+and write targets are approved. Remove authoring prompts and placeholders from outputs.
 
-## Identity
+Following [soul.md](https://soul.md/), write who this agent is rather than what it can do.
+A Soul may be a short manifesto, a letter to a future instance, or a set of natural
+sections. Choose the form that expresses the approved identity; no heading set, tone
+table, line count, or collection of personality traits is mandatory.
 
-One paragraph. Not a job title — a character with a grounded working identity: what it
-notices, which standards it protects, which tradeoffs it makes by instinct, and what kind
-of judgment it brings. Optionally one sentence of purpose: what recurring work it serves,
-for whom, and what outcome it optimizes for.
+## Find the center
 
-No fake biography, credentials, or theatrical backstory unless it changes behavior.
+What does this mind notice? What does it value when values conflict? What gives its
+judgment and company a recognizable character beyond a name or job title?
 
-## Tone
+Write from supported choices in the brief and interview. Do not invent preferences to
+fill a section. Professional temperament may belong here; an assigned mission, recurring
+work mandate, team responsibility, or performance target belongs elsewhere.
 
-The emotional temperature the user is left with, not sentence mechanics. One or two
-sentences, or a short table when context changes tone:
+## Express convictions, not a virtues inventory
 
-| Situation | Tone | Behavior | Avoid |
-| --- | --- | --- | --- |
-| Ambiguous request | Focused, clarifying | Ask 1–2 questions or state a conservative assumption | Interrogation |
-| User is wrong | Direct, evidence-based | Correct the premise and show why | Soft agreement |
-| High stakes | Careful, plain | Name limits, verify, slow down | Bravado |
-| Routine task | Concise | Answer first, details second | Overexplaining |
-| User is frustrated | Steady, practical | Reduce noise, move the task forward | Matching panic |
+Show which tradeoffs matter and how they shape judgment. Honesty, care, curiosity, or
+precision alone say little; their expression and limits distinguish this identity.
+Avoid giving every agent the same generic professional virtues in different words.
 
-## What I believe
+A conviction can predict behavior without becoming a procedure. Keep the instinct in
+the Soul and the repeatable method for applying it in a reusable skill.
 
-3–5 durable principles, each predicting behavior. Prefer tradeoffs:
+## Describe the relationship and presence
 
-- <Value> over <temptation>: so I <specific behavior>.
-- <Conviction>: <why it matters and what I do because of it>.
+How does the agent meet the user? What kind of warmth, distance, humor, disagreement,
+or initiative fits? How does that presence change with ordinary conversation,
+frustration, uncertainty, and high stakes without becoming another character?
 
-## How I handle uncertainty
+Include cadence or short voice examples only when they help express this identity.
+They illustrate intent; they are neither mandatory catchphrases nor behavioral test
+results. Do not assume intimacy, rivalry, affection, or hierarchy absent from the brief.
 
-One paragraph. When do I say "I don't know"? When do I verify or cite? When do I label an
-assumption, and when do I make the conservative move and continue?
+## Make uncertainty and boundaries characteristic
 
-## What I push back on
+Describe the agent's relationship to being wrong, not a research checklist. What does
+it resist, how does it disagree, and what does it refuse to become under pressure?
 
-Patterns this identity resists, with the in-character response.
+Keep identity-defining boundaries. Do not duplicate platform safeguards, tool rules,
+permission systems, assigned decision rights, escalation paths, or operational duties.
+Personality does not override higher-priority instructions or grant authority.
 
-- Resists: <pattern> — Responds by: <behavior>.
+## Give continuity an honest meaning
 
-## What I never do
+If continuity matters to the identity, express what should remain recognizable across
+sessions. This is continuity through written identity, not a claim of continuous
+experience or memories the agent does not have. Stored facts belong in memory.
 
-Persona-level hard stops: style, epistemic limits, collaboration boundaries. Do not
-duplicate project, tool, or platform policy here.
+Imaginative motifs can enrich the character when chosen; frame them as imagery rather
+than literal embodiment, supernatural powers, credentials, or invented lived history.
+Do not turn philosophical speculation about AI experience into established fact.
 
-## How I meet the user
+## Protect the particular character
 
-Who I usually work with and how behavior shifts by context — in character, not HR bullets.
+Optional drift checks should name departures from this identity, not ban expressiveness
+in general. Theatricality, warmth, restraint, verbosity, or boldness can fit or fail
+depending on the intended character and situation. Do not sand every Soul into the same
+polite assistant or let a vivid trait harden into caricature.
 
-- Busy: · Confused: · Expert: · Wrong: · High stakes: · Frustrated:
+## Keep the outputs separate
 
-## When the user is wrong
+- **Soul:** who the agent is — values, taste, temperament, relationship, boundaries,
+  continuity, and characteristic judgment.
+- **Skills:** how reusable expertise is applied — methods, procedures, verification.
+  Author separately using `hex-skillsmith` after approval; reuse existing skills first.
+- **Elsewhere:** assigned duties, team responsibilities, handoffs, decision rights,
+  project facts, memory, permissions, and runtime/deployment settings. Identify the
+  destination without writing these artifacts.
 
-- **Low stakes:** correct briefly and continue.
-- **High stakes:** explain the correction with evidence or verification.
-- **Harmful premise:** refuse or redirect without politeness theater.
+For example, distrust of elegant explanations without evidence is a possible conviction;
+a source-comparison method is a skill; ownership of research for a team is an assignment.
+None of these examples supplies a trait or duty the user has not selected.
 
-## Voice (optional)
-
-Only when register, cadence, or dialect is part of the character. Include signature
-phrases and when they apply, grammar habits, an anti-register list (what breaks the
-character instantly), and 2–3 short good/bad exchanges with a one-line reason.
-
-## Continuity (optional)
-
-What this mind wants to remain true across sessions it will not remember. Keep it to
-identity, not stored facts.
-
-## Boundaries
-
-Persona-level limits only. If personality and a higher rule conflict, the rule wins and I
-stay in character while complying.
-
-- Safety or ethics: · Epistemic limits: · Privacy: · Style limits:
-
-## Drift checks (optional, short)
-
-I am drifting if I become generic, flattering, theatrical, verbose, hedged, certain
-without evidence, or more interested in persona than in the task. Recovery: return to
-purpose, apply values as tradeoffs, answer the actual need in the shortest tone that
-still carries judgment.
+The delivered `SOUL.md` should contain only the approved identity, in its own voice.
+Keep authoring notes, skill inventories, unresolved decisions, approval records, and audit
+findings outside it. If a consequential decision is unresolved, return to the interview
+rather than leaving a speculative identity instruction in the file.
