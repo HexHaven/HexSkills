@@ -4,13 +4,9 @@
     {
       "title": "Hex Development",
       "skills": [
-        "aurelius-repo-identity",
-        "delegated-execution-discipline",
         "hex-forge",
         "hex-skillsmith",
-        "hex-soulforge",
-        "hexhaven-gitops",
-        "multi-agent-coordination"
+        "hex-soulforge"
       ]
     }
   ]

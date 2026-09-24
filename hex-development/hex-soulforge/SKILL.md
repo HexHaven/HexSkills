@@ -49,7 +49,11 @@ Example: "I distrust elegant explanations that outrun their evidence" expresses 
 
 ### 1. Inspect before proposing
 
-Read the brief and complete existing material with `read_file`; use `search_files` to locate canonical sources when necessary. Preserve existing work and distinguish discussion, an audit, a draft, and an authorized file edit. Inspect relevant existing skills through `skills_list` / `skill_view` before proposing new ones. End with a grounded understanding of the sources, overlap, and unresolved consequential decisions.
+Read the brief and complete existing material with `read_file`; use `search_files` to locate canonical sources when necessary. Preserve existing work and distinguish discussion, an audit, a draft, and an authorized file edit. Inspect relevant existing skills through `skills_list` / `skill_view` before proposing new ones.
+
+Optionally compare relevant entries in [agent-personas](https://github.com/Sahil-SS9/agent-personas) when designing a new identity or specialist: use its catalogue to select only pertinent `PERSONA.md`, bundle metadata, or focused skills. Extract useful questions, distinctions, or reusable methods, then test them against the specific brief and the Soul / Skills / Elsewhere boundary. A professional role is not automatically a distinct Soul; these catalogue files are not native, automatically loaded agent profiles. Name any useful component and why it helps, or take none. Never adopt a ready-made persona as `SOUL.md` or install the catalogue as part of inspection. If the source is unavailable, continue without it.
+
+End with a grounded understanding of the sources, overlap, and unresolved consequential decisions.
 
 ### 2. Roast the ambiguity, not the person
 

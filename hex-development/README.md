@@ -9,10 +9,6 @@ Hermes-native, general-purpose procedures for moving from project idea to verifi
 | `hex-forge` | Idea-to-deploy project lifecycle, gated at APPLY/PUBLISH/DEPLOY, plus read-only recap | `IDEA → DISCOVER → SHAPE → SPECIFY → READINESS → PLAN → APPLY → QUALIFY → [PUBLISH] → [DEPLOY] → UNIFY` |
 | `hex-skillsmith` | Hermes skill discovery, scaffold, distillation, audit | `DISCOVER → SPECIFY → SCAFFOLD → DISTILL → AUDIT → VERIFY` |
 | `hex-soulforge` | Forging and refining compact agent Souls in the `SOUL.md` shape | soul draft → distill → validate |
-| `hexhaven-gitops` | Aurelius, the trigger-driven autonomous HexHaven Git executor | `inspect → understand intent → change → validate → self-review → sign commit → push → verify → report` |
-| `aurelius-repo-identity` | Binding one named HexHaven repo to Aurelius' signing identity | verify repo → set identity → confirm signature |
-| `delegated-execution-discipline` | Handing part of a task to a sub-agent or harness | scope → delegate → verify the claim |
-| `multi-agent-coordination` | Routing work across specialist agents, escalating decisions | classify → route → escalate |
 
 Project flow:
 

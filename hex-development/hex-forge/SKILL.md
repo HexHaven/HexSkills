@@ -9,7 +9,7 @@ metadata:
   hermes:
     tags: [nyx, development, discovery, implementation, gitops, deployment, recap, lifecycle]
     category: hex-development
-    related_skills: [delegated-execution-discipline, hex-skillsmith, hex-soulforge]
+    related_skills: [hex-skillsmith, hex-soulforge]
 ---
 
 # Hex Forge
@@ -34,11 +34,9 @@ never to who approves a mutation.
   session" against an active or past hex-forge project.
 
 Don't use for: creating or auditing Hermes skills (`hex-skillsmith`), forging agent
-identity (`hex-soulforge`), HexHaven Git operations under the Aurelius identity
-(`hexhaven-gitops`, `aurelius-repo-identity` — disabled, separate persona), routing
-across peer specialist agents (`multi-agent-coordination`), or handing a bounded slice
-of an already-scoped task to a sub-agent (`delegated-execution-discipline` — hex-forge
-uses that skill's discipline internally, it doesn't replace it).
+identity (`hex-soulforge`), persona-specific HexHaven Git operations, or routing
+across peer specialist agents. A bounded slice of an already-scoped task can be
+delegated without invoking the full hex-forge project lifecycle.
 
 ## Modes
 
@@ -138,7 +136,7 @@ Classify `deployment_mode` as exactly `none`, `git-checkout`, `artifact`, `conta
 After explicit APPLY authorization, load `references/apply.md`. Make the smallest
 coherent local change; preserve unrelated work; follow the divergence gate for
 intent/specification/implementation/environment splits. Bounded sub-steps may be
-delegated per `delegated-execution-discipline` — see Delegation below. Done when the
+delegated under the bounds below. Done when the
 approved change is implemented, or honestly `BLOCKED`/`CANCELLED`.
 
 ### Phase 4 — QUALIFY_LOCAL
@@ -181,12 +179,12 @@ Load `references/recap.md`. Produces either a compact **RECAP** (operator-facing
 
 ## Delegation
 
-Bounded sub-steps of DISCOVER or APPLY may go to a sub-agent under
-`delegated-execution-discipline`: confirm the subscope sits inside the phase's own
-authorization, review returned work as evidence rather than truth, and re-run
-qualification in the integrated state. A sub-agent's report is never itself an
-APPLY/PUBLISH/DEPLOY authorization — those three gates stay between hex-forge and the
-operator directly, regardless of how much of the surrounding work was delegated.
+Bounded sub-steps of DISCOVER or APPLY may go to a sub-agent: confirm the subscope
+sits inside the phase's own authorization. Review returned work as evidence rather
+than truth, and re-run qualification in the integrated state. A sub-agent's
+report is never itself an APPLY/PUBLISH/DEPLOY authorization — those three
+gates stay between hex-forge and the operator directly, regardless of how much
+of the surrounding work was delegated.
 
 ## `.nyx/HANDOFF.md` Contract
 
