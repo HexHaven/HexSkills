@@ -1,8 +1,9 @@
 # `.nyx/HANDOFF.md` Contract
 
-Canonical schema for the repository-local project handoff. hex-forge owns writing it
-(READINESS), validating it against fresh evidence (PLAN), and closing it (UNIFY) — all
-within the same skill, so there is no cross-skill authority split to document.
+Canonical schema for an optional repository-local project handoff. With repository
+write authorization, hex-forge creates it and keeps its intent sections; hex-build
+validates it against fresh evidence at PLAN, updates status, and appends the Build
+Result at UNIFY. Both follow this one contract.
 
 ## Purpose and scope
 
@@ -10,7 +11,12 @@ within the same skill, so there is no cross-skill authority split to document.
 operator re-pasting the conversation. It is a workflow artifact, not project
 documentation and not implementation. Use it only with an identifiable
 repository/project root; otherwise present the handoff in chat only and say so plainly.
-Never force `.nyx/` into a directory that is not the project's own root.
+Never force `.nyx/` into a directory that is not the project's own root. Do not
+create this file just to advance a phase: first confirm the repository convention
+and obtain authorization for the record. If absent or not authorized, retain state
+in conversation and present a paste-ready handoff when requested. Once authorized,
+routine updates within the agreed scope need no new approval; replacing a different
+active handoff still requires the conflict decision below.
 
 ## Files
 
@@ -42,7 +48,7 @@ a mechanically generated timestamp, not a claim needing a fact label. `topic`
 reflects the operator's or session's own naming of the work (typically
 `USER-STATED`, occasionally `PROPOSED` if the skill suggested a slug the operator
 accepted). `readiness` and `status` are workflow-state classifications governed by
-their own defined vocabularies (`references/readiness.md`, `references/unify.md`),
+their own defined vocabularies (`references/readiness.md`, hex-build `references/unify.md`),
 not entries in the six-label fact model — do not force them into
 `USER-STATED`/`OBSERVED`/etc.
 
@@ -64,7 +70,7 @@ not entries in the six-label fact model — do not force them into
 ## Unknowns / Blockers
 
 ## Build Instruction
-PLAN first. STOP for operator approval before APPLY.
+If the bounded task is not yet planned, PLAN first. STOP for operator approval before APPLY.
 ```
 
 Keep it compact. No raw conversation dumps, environment variables, secrets, tokens,
@@ -100,13 +106,13 @@ deployment fields are unresolved.
 
 | Status | Set during | Meaning |
 |---|---|---|
-| `ACTIVE` | READINESS/HANDOFF | Ready to continue into PLAN, same or fresh session. |
-| `PLANNED` | PLAN | Produced and validated against repo evidence; awaiting APPLY. |
+| `ACTIVE` | SPECIFY/HANDOFF | Specification captured; continue to PLAN or resume the current phase. |
+| `PLANNED` | PLAN/READINESS | First-task plan checked against repo evidence; await APPLY only if readiness is `READY`. |
 | `IN_PROGRESS` | APPLY | Operator approved; APPLY has started. |
-| `PASS`/`FAIL`/`BLOCKED`/`CANCELLED` | UNIFY | Closure state — see `references/unify.md`. |
-| `SUPERSEDED` | READINESS (next run) | Set only when explicitly archiving a still-relevant-but-replaced handoff. |
+| `PASS`/`FAIL`/`BLOCKED`/`CANCELLED` | UNIFY | Closure state — see hex-build `references/unify.md`. |
+| `SUPERSEDED` | Next authorized handoff | Set only when explicitly archiving a still-relevant-but-replaced handoff. |
 
-`SUPERSEDED` is set only during a new READINESS write, never during UNIFY.
+`SUPERSEDED` is set only when replacing a handoff, never during UNIFY.
 
 ## Conflict check (performed before writing a new ACTIVE handoff)
 
@@ -142,8 +148,8 @@ status: PASS|FAIL|BLOCKED|CANCELLED
 ### Next Recommended Action
 ```
 
-No large logs. Evidence-backed statuses only — see `references/qualify.md` and
-`references/unify.md`.
+No large logs. Evidence-backed statuses only — see hex-build `references/qualify.md`
+and `references/unify.md`.
 
 ## Tracking policy
 
@@ -166,9 +172,8 @@ Compare handoff frontmatter/content to freshly observed evidence:
 
 ## Readiness distinction
 
-Distinguish project-wide readiness (the handoff's `readiness` field) from bounded-task
-readiness (whether *this* first task can be safely implemented). A project at `PLANNED`
-can still contain a task that is ready for implementation. Do not reject a safe bounded
-task merely because unrelated future work remains `UNKNOWN`. Do not proceed when an
+The handoff's `readiness` field describes the bounded first task, not the entire
+project. A project can have unrelated future unknowns while that task is `READY`.
+Do not reject the task merely because later work remains `UNKNOWN`. Do not proceed when an
 `UNKNOWN` materially affects this task's security, architecture, credentials, exposure,
 data handling, or acceptance criteria.

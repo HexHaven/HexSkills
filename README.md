@@ -26,7 +26,7 @@ HexSkills/
 
 | Category | Description |
 | --- | --- |
-| [`hex-development`](./hex-development/) | General-purpose Hermes agent workflow skills: idea-to-deploy project lifecycle with recap mode (`hex-forge`), skill authoring (`hex-skillsmith`), and agent Soul authoring (`hex-soulforge`). |
+| [`hex-development`](./hex-development/) | General-purpose Hermes agent workflows: Gitea hosting operations (`gitea`), idea-to-blueprint planning (`hex-forge`), blueprint execution (`hex-build`), skill authoring (`hex-skillsmith`), and agent Soul authoring (`hex-soulforge`). |
 
 New categories are added organically as skills are authored — no placeholder categories are pre-created.
 

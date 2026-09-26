@@ -10,7 +10,10 @@
 | `PLANNED` | A bounded first milestone and validation approach exist. | Every READY condition below passes. |
 | `READY` | The first task can be implemented without inventing high-impact facts. | Separate execution authorization is obtained. |
 
-Report exactly one current state. A project does not advance because time was spent on it; it advances when the exit condition is evidenced.
+Report exactly one current state. Discovery may provisionally report `SPECIFIED` or
+`PLANNED`; final `READY` is assessed after PLAN has defined and checked the bounded
+first task. A project advances on evidence, not elapsed time. A fresh session may
+resume at the evidenced state without replaying earlier phases.
 
 ## READY conditions
 
@@ -51,4 +54,5 @@ Use `PASS`, `FAIL`, or `NOT APPLICABLE` per condition. `READY` requires no `FAIL
 - credentials, spending, external messages, or remote mutation;
 - destructive or security-reducing action.
 
-The handoff must name the next proposed action and wait for its authorization.
+The plan or, when authorized, the handoff must name the next proposed action and wait
+for its authorization. A handoff file is not a prerequisite for `READY`.

@@ -4,7 +4,10 @@
 
 - Task intent is sufficiently specified to inspect without inventing high-impact facts.
 - Source of truth, repository/workspace target, and operator scope are known.
-- PLAN is read-only except for an explicitly authorized plan artifact.
+- The active slice is chosen from `.nyx/BLUEPRINT.md` (or the in-chat blueprint; contract
+  in hex-forge `references/blueprint.md`); its
+  intent line becomes the plan's Intent and its `Done when` feeds acceptance.
+- PLAN is read-only except for an explicitly authorized plan or handoff artifact.
 
 ## Repository and deployment discovery
 
@@ -28,14 +31,19 @@
    | `container` | Image/manifest deployment is documented or USER-STATED. |
    | `unknown` | Evidence is absent, incomplete, or contradictory. |
 
-For `git-checkout`, record approved remote, branch, production host/path, service unit, build/install command, restart/reload command, health verification, and rollback method. Each is `OBSERVED`, `USER-STATED`, or `UNKNOWN`; never substitute plausible values. Record these under the `## Deployment` addition defined in `references/handoff.md` when `.nyx/HANDOFF.md` is in scope.
+For `git-checkout`, record approved remote, branch, production host/path, service unit, build/install command, restart/reload command, health verification, and rollback method. Each is `OBSERVED`, `USER-STATED`, or `UNKNOWN`; never substitute plausible values. Record these under the `## Deployment` addition defined in hex-forge `references/handoff.md` when `.nyx/HANDOFF.md` is in scope.
 
 ## Handoff validation
 
-If `.nyx/HANDOFF.md` exists, load `references/handoff.md` and compare its task contract to fresh evidence. A high-impact contradiction (security, architecture, credentials, public exposure, data handling, acceptance criteria, or deployment target) means **STOP** before PLAN. Absence is normal; do not create `.nyx/` automatically.
+If `.nyx/HANDOFF.md` exists, load hex-forge `references/handoff.md` and compare its task contract to fresh evidence. A high-impact contradiction (security, architecture, credentials, public exposure, data handling, acceptance criteria, or deployment target) means **STOP** before PLAN. Absence is normal; do not create `.nyx/` automatically.
 
 ## Task contract and checkpoint
 
 Define only intent, scope, dependencies, expected/protected files, non-goals, observable acceptance criteria, exact known validation, deployment facts/unknowns, risks/recovery, and separate APPLY/PUBLISH/DEPLOY authorization gates. A deployment plan requests deployment and defined rollback authorization together, but neither is implied by APPLY/PUBLISH.
 
-Present Git state, protected work, deployment classification, target facts/unknowns, validation, risks, and rollback proposal. **STOP.** APPLY begins only after explicit local-scope authorization; PUBLISH and DEPLOY stay unapproved unless expressly granted.
+After defining the slice task and its validation, assess hex-forge `references/readiness.md`.
+Present one plan with Git state, protected work, deployment classification, target
+facts/unknowns, risks, rollback proposal, and the single current readiness state.
+If `READY`, **STOP** for APPLY authorization. Otherwise report the blocking condition
+and next decision without requesting APPLY. PUBLISH and DEPLOY remain unapproved unless
+expressly granted.

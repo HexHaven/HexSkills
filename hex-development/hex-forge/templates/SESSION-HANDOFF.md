@@ -8,8 +8,12 @@
 
 ## Active workflow
 - active hex-forge topic: <name or "none">
-- current phase: <IDEA|DISCOVER|SHAPE|SPECIFY|READINESS for the discovery half, or
-  PLAN|APPLY|QUALIFY|PUBLISH|DEPLOY|UNIFY for the build half>
+- current phase: <IDEA|DISCOVER|SHAPE|SPECIFY|ROOT|BLUEPRINT, or per slice
+  PLAN|READINESS|APPLY|QUALIFY|PUBLISH|DEPLOY|UNIFY>
+- active slice: <blueprint id + intent line, or "none">
+
+## Derived intent
+Refocus block from `.nyx/BLUEPRINT.md` (slice → mission → project), quoted, or "none observed".
 - readiness/closure state: <readiness state, or PASS|FAIL|BLOCKED|CANCELLED|open>
 
 ## Established facts

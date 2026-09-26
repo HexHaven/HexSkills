@@ -2,6 +2,7 @@
 
 **Status:** PROPOSED — awaiting operator review  
 **Source:** [project specification, issue, or request]
+**Slice:** [blueprint id, e.g. M1.S2] · Mission: [id + intent line] · Project: [intent line]
 
 ## Intent
 

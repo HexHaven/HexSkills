@@ -4,6 +4,8 @@
     {
       "title": "Hex Development",
       "skills": [
+        "gitea",
+        "hex-build",
         "hex-forge",
         "hex-skillsmith",
         "hex-soulforge"

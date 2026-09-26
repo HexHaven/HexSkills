@@ -1,6 +1,7 @@
 # RECAP / HANDOFF Mode
 
-Read-only reporting over current or past `hex-forge` state. Never advances IDEA…UNIFY,
+Read-only reporting over current or past hex project state, shared by `hex-forge` and
+`hex-build`. Never advances IDEA…UNIFY,
 never shapes a spec, never mutates anything.
 
 ## Mode selection
@@ -14,7 +15,7 @@ If ambiguous, produce RECAP and offer HANDOFF.
 
 ## Procedure
 
-1. **Identify scope** — determine which hex-forge phase (IDEA…READINESS or
+1. **Identify scope** — determine which phase (hex-forge IDEA…BLUEPRINT or hex-build
    PLAN…UNIFY) is active from the current conversation and `.nyx/HANDOFF.md`. If
    neither, say so plainly and fall back to a generic session recap.
 2. **Inspect repository evidence (read-only)** — using whatever terminal/shell tool
@@ -27,6 +28,8 @@ If ambiguous, produce RECAP and offer HANDOFF.
    under `docs/adr/` or similar. Skip files that don't exist rather than guessing
    their content; use a file-search capability if one is available and the ADR
    location is unclear.
+   If `.nyx/BLUEPRINT.md` exists, read it and put the Refocus block
+   (`references/refocus.md`) plus slice progress (done/open/blocked) first.
 3. **Reconcile evidence against conversational claims** — repository state overrides a
    stale conversational claim. Flag contradictions explicitly. Every fact used gets a
    label: `USER-STATED`, `OBSERVED`, `ASSUMED`, `PROPOSED`, `UNKNOWN`, `CONTRADICTORY`.

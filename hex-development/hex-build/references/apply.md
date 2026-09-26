@@ -14,10 +14,14 @@
 4. Keep unrelated modifications, formatting, generated files, and refactors out of the diff.
 5. Record unexpected discoveries, decisions, and deviations as they occur.
 6. After each coherent slice, inspect the resulting diff/state before widening work.
+7. Before a step that no acceptance criterion requires, run Refocus
+   (`skill_view(name="hex-forge", file_path="references/refocus.md")`).
 
 ## Divergence gate
 
 Stop when any of these occurs:
+
+- Refocus shows the next step would change intent, scope or acceptance;
 
 - an expected file, API, dependency, or invariant does not exist;
 - implementation requires touching an excluded or unrelated area;
@@ -29,8 +33,8 @@ Classify before continuing:
 
 | Class | Meaning | Response |
 |---|---|---|
-| Intent | The requested outcome is wrong or changed. | Return to task definition and obtain a new decision. |
-| Specification | Acceptance or plan omitted/misstated required behavior. | Revise the plan and approval boundary. |
+| Intent | The requested outcome is wrong or changed. | Return to hex-forge (blueprint) and obtain a new operator decision. |
+| Specification | Acceptance or plan omitted/misstated required behavior. | Slice-level: revise the plan and approval boundary. Blueprint-level (`Done when`, slices): return to hex-forge. |
 | Implementation | The plan is sound but the change is incorrect. | Correct inside approved scope, then qualify. |
 | Environment | Tooling, permissions, dependency, or runtime blocks proof. | Report evidence and recovery options; do not fake progress. |
 

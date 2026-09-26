@@ -63,5 +63,5 @@ Use only: USER-STATED, OBSERVED, ASSUMED, PROPOSED, UNKNOWN, CONTRADICTORY.
 
 ## Build Instruction
 
-PLAN first.
+If the bounded task is not yet planned, PLAN first.
 STOP for operator approval before APPLY.

@@ -6,7 +6,9 @@ Hermes-native, general-purpose procedures for moving from project idea to verifi
 
 | Skill | Owns | Workflow |
 |---|---|---|
-| `hex-forge` | Idea-to-deploy project lifecycle, gated at APPLY/PUBLISH/DEPLOY, plus read-only recap | `IDEA → DISCOVER → SHAPE → SPECIFY → READINESS → PLAN → APPLY → QUALIFY → [PUBLISH] → [DEPLOY] → UNIFY` |
+| `gitea` | Gitea repository, issue, and pull-request procedures with explicit approval guidance | preflight → inspect → authorize → mutate → read back |
+| `hex-forge` | Planning: idea → project root → blueprint (missions, slices, intent); owns plan changes; shared recap | `IDEA → DISCOVER → SHAPE → SPECIFY → ROOT → BLUEPRINT` |
+| `hex-build` | Execution: works the blueprint off slice by slice with Refocus, gated at APPLY/PUBLISH/DEPLOY | per slice: `PLAN → READINESS → APPLY → QUALIFY → [PUBLISH] → [DEPLOY] → UNIFY` |
 | `hex-skillsmith` | Hermes skill discovery, scaffold, distillation, audit | `DISCOVER → SPECIFY → SCAFFOLD → DISTILL → AUDIT → VERIFY` |
 | `hex-soulforge` | Forging and refining compact agent Souls in the `SOUL.md` shape | soul draft → distill → validate |
 

@@ -43,4 +43,4 @@ Code-only or publication-only scope can pass without deployment. A deployment-re
 
 ## State and exit
 
-Use repository-native artifacts first. If `.nyx/HANDOFF.md` is in scope, append `## Build Result`; never alter the handoff's original Goal/Scope/Non-Goals/Acceptance Criteria. Preserve `UNKNOWN` deployment facts and rollback state. Do not automatically commit, push, deploy, restart, close issues, or notify as part of UNIFY.
+Use repository-native artifacts first. If `.nyx/HANDOFF.md` is in scope, append `## Build Result`; never alter the handoff's original Goal/Scope/Non-Goals/Acceptance Criteria. Preserve `UNKNOWN` deployment facts and rollback state. When the blueprint is in scope, set the slice status (`[x]`/`[!]`/`[-]`), add parked ideas raised during the slice, and propose the next open slice without starting it. Do not automatically commit, push, deploy, restart, close issues, or notify as part of UNIFY.
