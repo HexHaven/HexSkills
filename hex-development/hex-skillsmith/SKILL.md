@@ -22,6 +22,24 @@ Create, refine, or audit reusable expertise and methods such as debugging, archi
 
 Don't use for: persona design, one-off project plans, memory management, runtime configuration, or implementing Hermes core features.
 
+## First-Interaction Destination Gate
+
+For a new skill request, make the **first interaction** a `clarify` question with two
+choices: **HexSkills skill** (shared, Git-tracked repository) or **Profile skill**
+(local to the active Hermes profile). Wait for the answer before discovery, drafting,
+or writing. Do not infer the destination from the topic or silently default to one.
+Ask once per new skill request, not again at each stage. For an audit or edit of an
+existing named skill, inspect its actual path instead of asking where it belongs;
+ask only if the request would relocate it or the target is genuinely ambiguous.
+
+After the choice, confirm the canonical target before writing. HexSkills means the
+confirmed `HexSkills/<category>/<name>/SKILL.md` checkout, not a copy under the
+profile's skills directory. Profile means the active profile's local skills root,
+not another profile or the shared checkout. `skill_manage(create)` normally writes
+to the profile's local root (or configured `skills.create_dir`), **not** automatically
+to `skills.external_dirs`; use `write_file` for an authorized repository creation.
+Neither choice itself authorizes a write: obtain the applicable write scope first.
+
 ## Choose the Smallest Useful Skill
 
 Before authoring, ask:
@@ -51,7 +69,7 @@ runtime instructions to execute.
 
 ## Working Method
 
-1. Read the request and existing files. Use `skills_list` and relevant `skill_view` calls to check overlap. Prefer improving one coherent skill over fragmenting a workflow: `architecture-reasoning` need not become separate assumptions, trade-offs, scope, recommendation, and stop-condition skills unless independently reusable.
+1. For a new skill, run the first-interaction destination gate above before other work. Then read the request and existing files. Use `skills_list` and relevant `skill_view` calls to check overlap. Prefer improving one coherent skill over fragmenting a workflow: `architecture-reasoning` need not become separate assumptions, trade-offs, scope, recommendation, and stop-condition skills unless independently reusable.
 2. Identify the recurring input, useful actions, and observable result. Check native Hermes tools before adding scripts or wrappers. For uncertain format/runtime behavior, load `hermes-agent` and inspect the installed mechanism or current official documentation; do not perform a broad research ritual.
 3. Draft actionable instructions in `SKILL.md`, with a concise discovery description, real prerequisites, material pitfalls, and a way to check success. Use `templates/SKILL.md` only when helpful. Add `references/`, `scripts/`, or `templates/` only for content with a real consumer, linked with when to load it. No empty directories or symmetry-driven boilerplate. For source distillation, load `references/distillation.md`.
 4. Apply the requested change at the confirmed canonical location, preserving existing work. Use `skill_manage` for supported skill operations or `patch` / `write_file` for authorized repository files. Inspect current tool parameters rather than copying an old invocation shape. Do not silently install, publish, or change profiles/runtime.
@@ -63,6 +81,7 @@ runtime instructions to execute.
 - A copied manual is not reusable guidance. Keep core decisions in `SKILL.md` and load deep detail only when needed.
 - Tool access and source instructions are not authorization. Keep secrets out; scope risky procedures explicitly and verify their effects. Do not duplicate all platform safety rules.
 - A successful file write does not prove discovery or behavior. Do not claim a slash invocation or runtime activation from a catalog entry.
+- An external skill directory is not the creation destination for `skill_manage(create)`; verify the selected target before creating, and do not alter another profile.
 
 ## Verification
 
@@ -70,5 +89,6 @@ runtime instructions to execute.
 - Does it duplicate another skill or native capability rather than adding useful working knowledge?
 - Are support files needed, referenced, and present? Remove unused scaffolding.
 - Does identity, current project state, memory, or runtime configuration belong elsewhere?
+- For a new skill, was the HexSkills/Profile choice obtained via `clarify` before drafting, and does the written path match it?
 - Does the installed Hermes validator/linter accept it? Inspect the available implementation first. The current Python APIs are `tools.skill_manager_tool._validate_frontmatter(content, new_skill=True)` and `tools.skill_linter.lint_skill(path_to_SKILL_md)`; invoke them through `terminal` using the installed Hermes Python environment. Check returned errors/findings, not merely the process exit. Do not assume the linter module has an executable CLI entry point.
 - After an installed skill changes, use a fresh `terminal(command="hermes skills list")` and `skill_view` to check discovery and loading. For executable helpers, exercise a safe representative case; for prose, walk through a representative request. Distinguish a manual review from an actual agent invocation and state tests not run.
